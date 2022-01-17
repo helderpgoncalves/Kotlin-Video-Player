@@ -2,7 +2,7 @@
 
 buildscript {
     extra.apply {
-        set("kotlin_version","1.3.50")
+        set("kotlin_version", "1.3.50")
     }
 
     repositories {

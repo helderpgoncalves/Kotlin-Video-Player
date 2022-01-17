@@ -25,7 +25,7 @@ class RemoteVideoDataSource(private val playlist: PlayerPlaylist, private val ca
     }
 
     @ExperimentalCoroutinesApi
-    override fun getVideos():Flow<Video> = callbackFlow {
+    override fun getVideos(): Flow<Video> = callbackFlow {
         for (catalogAsset: CatalogAsset in playlist.catalogAssetList) {
             catalog.findVideoByID(catalogAsset.id, object : VideoListener() {
                 override fun onVideo(video: Video) {

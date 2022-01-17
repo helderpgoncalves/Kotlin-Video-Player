@@ -1,2 +1,2 @@
 include(":app")
-rootProject.name="BrightcoveKotlinVideoPlayer"
+rootProject.name = "BrightcoveKotlinVideoPlayer"

@@ -36,6 +36,7 @@ const val TEST_PLAYLIST_JSON = """
    ]
 }
 """
+
 class PlaylistParserTest {
 
     @Test

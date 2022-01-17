@@ -2,7 +2,6 @@ package com.example.brightcove.kotlin.videoplayer
 
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
 import com.brightcove.player.edge.Catalog
 import com.brightcove.player.edge.VideoListener
 import com.brightcove.player.model.Video
@@ -30,7 +29,7 @@ class VideoPlayerActivity : BrightcovePlayer() {
         video?.let { addAndStart(it) } ?: loadDefaultVideo()
 
     }
-    
+
     private fun loadDefaultVideo() {
         // Get the event emitter from the SDK and create a catalog request to fetch a video from the
         // Brightcove Edge service, given a video id, an account id and a policy key.

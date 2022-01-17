@@ -13,6 +13,7 @@ import com.brightcove.player.util.StringUtil
 import com.bumptech.glide.Glide
 import com.example.brightcove.kotlin.videoplayer.utils.title
 import com.example.brightcove.kotlin.videoplayer.viewmodels.PlayerListViewModel
+import org.w3c.dom.Text
 
 class VideoListViewAdapter(
     private val playerListViewModel: PlayerListViewModel,
@@ -40,6 +41,7 @@ class VideoListViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val video = videoList[position]
         holder.videoNameView.text = video.title
+        holder.videoDescriptionView.text = video.description
         holder.videoDurationView.text = StringUtil.stringForTime(video.duration.toLong())
         holder.videoThumbnailImageView.setOnClickListener { playerListViewModel.openVideo(video) }
         val poster = video.posterImage
@@ -54,6 +56,7 @@ class VideoListViewAdapter(
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val videoNameView: TextView = view.findViewById(R.id.video_name)
+        val videoDescriptionView : TextView = view.findViewById(R.id.video_description)
         val videoDurationView: TextView = view.findViewById(R.id.video_duration)
         val videoThumbnailImageView: ImageView = view.findViewById(R.id.video_thumbnail)
     }

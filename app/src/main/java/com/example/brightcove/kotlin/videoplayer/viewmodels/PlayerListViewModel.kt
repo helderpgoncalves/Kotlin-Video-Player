@@ -12,11 +12,12 @@ class PlayerListViewModel @ViewModelInject constructor(val videoRepository: Vide
     ViewModel() {
 
     private val _videoList = MutableLiveData<List<Video>>()
+
     @Suppress("unused")
     val videoList: LiveData<List<Video>> = _videoList
 
     @ExperimentalCoroutinesApi
-    val videoFlow:LiveData<Video> = videoRepository.getVideos().asLiveData()
+    val videoFlow: LiveData<Video> = videoRepository.getVideos().asLiveData()
 
     private val _videoToLoad = MutableLiveData<Event<Video>>()
     val videoToLoad: LiveData<Event<Video>> = _videoToLoad
